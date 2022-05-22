@@ -43,7 +43,7 @@ app.post('/', function (req, res, err) {
             res.sendFile(__dirname + '/failure.html');
         }
     });
-    // request.write(jData);
+    request.write(jData);
     request.end();
 });
 
