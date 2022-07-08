@@ -49,7 +49,8 @@ def binarySearchIterative(arr,x):
 if __name__ == "__main__":
     resultado = binarySearchIterative(lista, d)
     if resultado != -1:
-        print('achado!! ', resultado)
+        mid,counter = resultado
+        print('o numero ', mid,' foi achado e levou ', counter,' vezes para ser calculado')
     else:
         print('numero inexistente, codigo: ', resultado)
 
