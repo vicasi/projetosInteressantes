@@ -1,7 +1,6 @@
 #a lista precisa estar organizada antes de começar a busca
 
 lista = sorted((14, 26, 25, 7, 33, 8, 29, 48, 57, 38, 32, 19, 44, 97,58, 78, 99, 54, 40, 25, 15, 74, 41, 25, 72, 23, 28, 76, 99, 9, 57, 21, 56, 75))
-d = 14
 
 # def binarySearch(arr, low, high, x, count):
 #     mid = (high + low) // 2
@@ -47,6 +46,7 @@ def binarySearchIterative(arr,x):
 
 
 if __name__ == "__main__":
+    d = int(input('digite o numero entre 7 e 99: '))
     resultado = binarySearchIterative(lista, d)
     if resultado != -1:
         mid,counter = resultado

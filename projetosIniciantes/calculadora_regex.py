@@ -4,6 +4,7 @@ from tkinter import ttk
 from tkinter import messagebox
 import re
 import math
+from types import NoneType
 
 minha_janela = tk.Tk()
 minha_entrada = tk.Entry()
@@ -19,29 +20,22 @@ minha_label = tk.Label(
 )
 
 def padrao_sinal(texto):
-    padrao_sinal = r"[\+|\-|\*|\/|\*\*|sqrt]"
-    regex_sinal = re.findall(padrao_sinal, texto)
-    string = "".join(regex_sinal)
-    return string
+    padrao_sinal = r"\+|\-|\/|\*|\*\*|sqrt|x|X"
+    regex_sinal = re.search(padrao_sinal, texto).group()
+    return regex_sinal
 
 
 
 def calculo():
     texto = minha_entrada.get()
-    padrao_num0 = r"^\d+\s*"
-    padrao_num1 = r"\s*\d+$"
-    regex0 = re.findall(padrao_num0, texto)
-    regex1 = re.findall(padrao_num1, texto)
-    # convert0 = list(map(int, regex0))
-    # convert1 = list(map(int, regex1))
-    lista_str0 = [str(integer) for integer in regex0]
-    lista_str1 = [str(integer) for integer in regex1]
-    str0 = "".join(lista_str0)
-    str1 = "".join(lista_str1)
-    convert0 = int(str0)
-    convert1 = int(str1)
+    padrao_num0 = r"^\s*\d+\s*"
+    padrao_num1 = r"\s*\d+\s*$"
+    convert0 = int(re.search(padrao_num0, texto).group())
+    regex1 = re.search(padrao_num1, texto)
+    if regex1:        
+        convert1 = int(regex1.group())
     sinal = padrao_sinal(texto)
-    if sinal == '*':
+    if sinal == '*' or sinal == 'x' or sinal == 'X':
         resultado = convert0 * convert1
         return resultado
     elif sinal == '/':
@@ -66,15 +60,11 @@ def calculo():
 def resultado():
     messagebox.showinfo('resultado',calculo())
 
-
-
-meu_botao = tk.Button(text='somar',command=submit)
 meu_botao2 = tk.Button(text='resultado',command=resultado)
 
 #packs
 minha_label.pack()
 minha_entrada.pack()
-meu_botao.pack()
 meu_botao2.pack()
 
 
