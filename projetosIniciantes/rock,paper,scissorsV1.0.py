@@ -4,12 +4,12 @@ def rps(rodada, ganhos):
     escolha = input('pedra, papel e tesoura, escolha um(pe,pa,te) :)')
     escolha_maquina = random.randrange(0,2,1)
     def switcher(item):
-        switcher = {
+        escolha = {
             'pe' : 0,
             'pa' : 1,
             'te' : 2  
         }
-        return switcher.get(item, False)
+        return escolha.get(item, False)
     sua_escolha = switcher(escolha)
     if rodadas == 2:
         continuar = input('deseja continuar? (s/n)')
