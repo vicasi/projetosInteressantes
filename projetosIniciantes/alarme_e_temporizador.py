@@ -28,7 +28,7 @@ def temporizador(horas, minutos, segundos):
         print(tempo)
         if tempo_total_segundos < 0:
             print('acabou o tempo!! tocarei uma musica caso voce tenha a bilioteca do pip playsound \O/ para sair deve fechar o prompt ')
-            playsound(os.getcwd() +'\projetosIniciantes\musica.mp3')
+            playsound(os.getcwd() +'\projetosIniciantes\\arquivos_necessarios\musica.mp3')
             return False
     
 

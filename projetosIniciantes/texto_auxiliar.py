@@ -144,6 +144,14 @@ from playsound import playsound
 # print(padrao_sinal('432 +'))
 
 # \s*\+|\-|\*|\/|\*\*|sqrt|x|X\s*\d*
-regex1 = re.search(r'\s+\d+$', '532 x')
-print(regex1)
-print(regex1)
+# regex1 = re.search(r'\s+\d+$', '532 x')
+# print(regex1)
+# print(regex1)
+
+# primeira_tentativa = input('chute um número entre 0 e 15: ')
+# primeira_tentativa = '35dgdsagsa'
+# capturando_numeros = re.search(r"\d*", primeira_tentativa)
+# # if capturando_numeros:
+# #     capturando_numeros = int(capturando_numeros.group())
+# print(type(capturando_numeros.group()))
+# print(capturando_numeros.group())
